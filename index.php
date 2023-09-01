@@ -30,6 +30,8 @@
          $message[]='product successfuly added in wishlist!';
     }
 }
+
+
 /*-----adding product to cart-------*/
 
 if(isset($_POST['add_to_cart'])){
@@ -50,6 +52,9 @@ if(isset($_POST['add_to_cart'])){
      $message[]='product successfuly added in cart!';
 }
 }
+
+
+
     ?>
     <style type="text/css">
         <?php include 'footer.css';?>
@@ -92,14 +97,14 @@ if(isset($_POST['add_to_cart'])){
             </div>
             <div class="card">
                 <div class="detail">
-                    <span> 30% OFF TODAY </span>
+                    <span> 20% OFF FOR ROSES </span>
                     <h1> Simple & Elegant </h1>
                     <a href="shop.php"> shop now </a>
                 </div>
             </div>
             <div class="card">
                 <div class="detail">
-                    <span> 30% OFF TODAY </span>
+                    <span> 30% OFF FOR DAISY </span>
                     <h1> Simple & Elegant </h1>
                     <a href="shop.php"> shop now </a>
                 </div>
@@ -110,35 +115,36 @@ if(isset($_POST['add_to_cart'])){
             <div class="box-container">
                     <div class="box">
                        <img src="img/bday.jpg">
-                       <span> Birthday</span>
+                       <a href="bday.php"> Birthday </a>
+                      
                     </div> 
                      <div class="box">
                        <img src="img/congrats.jpg">
-                       <span> Congratulation</span>
+                       <a href="congrats.php"> Congrats </a>
                     </div>
                     <div class="box">
                        <img src="img/anniv.jpg">
-                       <span> anniversary</span>
+                       <a href="annivrsray.php"> Anniversary</a>
                     </div>
                    <div class="box">
                        <img src="img/newborn.jpg">
-                      <span> newborn</span>
+                      <a href="newborn.php"> Newborn</a>
                    </div>
                     <div class="box">
                          <img src="img/love.jpg">
-                        <span> love & romance</span>
+                        <a href="love.php"> Love & Romance</a>
                     </div>
                 <div class="box">
                     <img src="img/gws.jpg">
-                    <span> get well soon</span>
+                    <a href="well.php"> Get well soon</a>
                 </div>  
                 <div class="box">
                          <img src="img/symp.jpg">
-                        <span> sympthye</span>
+                        <a href="sympthy.php"> Sympthye</a>
                     </div>
                     <div class="box">
                          <img src="img/sry.jpg">
-                        <span>thank you</span>
+                        <a href="thank.php">Thank you</a>
                     </div> 
             </div>
         </div>
@@ -182,8 +188,8 @@ if(isset($_POST['add_to_cart'])){
         <input type="hidden" name="product_image"  value="<?php echo $fetch_products['image'];?>">
         <div class="icons">
             <a href="view_page.php?pid=<?php echo $fetch_products['id'];?>" class="fas fa-eye"></a>
-            <button type="submit" name="add-to-wishlist" class="fa fa-heart"></button>
-            <button type="submit" name="add-to-cart" class="fas fa-shopping-cart"></button>
+            <button type="submit" name="add_t_wishlist" class="fa fa-heart"></button>
+            <button type="submit" name="add_to_cart" class="fas fa-shopping-cart"></button>
             </div>
             </form>
         <?php 

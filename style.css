@@ -38,7 +38,7 @@ a{
     text-decoration: none;
 }
 .form-container{
-    background-image: url('image/first.jpg') ;
+   background-image: url("image1/istockphoto-582301878-612x612.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -128,7 +128,6 @@ header{
     width: 100%;
     padding: 1rem 0;
     box-shadow: var(--box-shadow);
-    position: sticky;
     z-index: 1000;
 
 }
