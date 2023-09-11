@@ -38,13 +38,28 @@ if(isset($_POST['add_to_cart'])){
 
     header('location:wishlist.php');
 }
-/*---delete product to wishlist-------*/
+/*---delete product to wishlist-------
 if(isset($_GET['delete_all'])){
     
     mysqli_query($conn,"DELETE FROM wishlist WHERE user_id='$user_id'") or die
     ('querry failed');
 
     header('location:wishlist.php');
+}*/
+if (isset($_GET['delete_all'])) {
+    // Assuming you have already established a database connection and authenticated the user.
+
+    $user_id = mysqli_real_escape_string($conn, $user_id); // Sanitize user_id
+
+    $query = "DELETE FROM wishlist WHERE user_id='$user_id'";
+
+    if (mysqli_query($conn, $query)) {
+        // Delete successful
+        header('location: wishlist.php');
+    } else {
+        // Handle the error gracefully
+        echo "Error: " . mysqli_error($conn);
+    }
 }
 
      ?>
@@ -91,13 +106,15 @@ if(isset($_GET['delete_all'])){
       }
     ?>
     <div class="box-container">
-        <?php
+    <?php
             $grand_total=0;
             $select_wishlist=mysqli_query($conn,"SELECT * FROM wishlist WHERE user_id='$user_id'")or
             die('query failed');
             if(mysqli_num_rows($select_wishlist)>0){
             while ($fetch_wishlist=mysqli_fetch_assoc($select_wishlist)){
         ?>
+       
+
          <div class="box">
         <form method="post" action="" class="box">
        

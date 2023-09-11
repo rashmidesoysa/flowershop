@@ -42,13 +42,15 @@
             <i class="fa fa-user" > </i>
 </div>          
         <div class="user-box">
-            <p> UserName: <span><?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : ''; ?></span></p>
-           <p> Email: <span><?php echo isset($_SESSION['user_email']) ? $_SESSION['user_email'] : ''; ?></span></p>
+            <p> UserName: <span><?php echo $_SESSION['user_name']; ?></span></p>
+           <p> Email: <span><?php echo $_SESSION['user_email'] ;?></span></p>
           <form method="post" class="logout">
             <button type="submit" name="logout" class="logout-btn">LOG OUT</button>
           </form>
         </div>
+        
 </div>
+
 
 
 </header>

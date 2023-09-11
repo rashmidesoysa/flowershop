@@ -97,7 +97,7 @@ form .btn:hover{
     color: #545bba;
 }
 .box-container{
-    padding: 2% 8%;
+    padding: 3% 7%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
     justify-content: center;

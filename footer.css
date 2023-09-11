@@ -154,7 +154,8 @@
     border: 1px solid gainsboro;
     line-height: 50px;
 }
-/*--------------home section----------
+/*
+-------------home section----------
 .slide-show-container{
     height: 100%;
     width: 100%;
@@ -232,6 +233,7 @@
         opacity: 0;
     }
 }
+
 */
 .row{
     display: grid;
@@ -271,7 +273,7 @@
     background: url('img/banner.jpg');
 }
 .row .card:nth-child(2){
-    background: url('image/1-1.jpg');
+    background: url('img/1.jpg');
 }
 .row .card:nth-child(3){
     background: url('img/banner.jpg');
@@ -359,6 +361,8 @@
     background: var(--white-alpha-40);
     visibility: visible;
 }
+
+
 .shop .box:hover .icons{
     visibility: visible;
 }

@@ -12,7 +12,7 @@
     
 /*-----update product to cart-------*/
     if(isset($_POST['update_quantity_btn'])){
-        $update_quantity_id=$_POST['update_quantity_id'];
+     /*   $update_quantity_id=$_POST['update_quantity_id'];
         $update_value=$_POST['update_quantity'];
 
         $update_query=mysqli_query($conn,"UPDATE  cart SET quantity='$update_value' WHERE id='$update_quantity_id'") or die
@@ -20,8 +20,14 @@
         if($update_query){
             header('location:cart.php');
         }
-    }
-
+    }*/
+    $update_quantity_id = mysqli_real_escape_string($conn, $_POST['update_quantity_id']);
+    $update_value = mysqli_real_escape_string($conn, $_POST['update_quantity']);
+    
+    $update_query = mysqli_prepare($conn, "UPDATE cart SET quantity=? WHERE id=?");
+    mysqli_stmt_bind_param($update_query, "ii", $update_value, $update_quantity_id);
+    mysqli_stmt_execute($update_query);
+} 
 
  /*---delete product to wishlist-------*/
  if(isset($_GET['delete'])){

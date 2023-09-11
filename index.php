@@ -16,16 +16,16 @@
         $product_price=$_POST['product_price'];
         $product_image=$_POST['prpduct_image'];
 
-        $wishlist_number=mysqli_query($conn,"SELECT * FROM wishlist WHERE name='$product_name' AND user_id='$user_id'") or die
-        ('querry failed');
-        $cart_number=mysqli_query($conn,"SELECT * FROM cart WHERE name='$product_name' AND user_id='$user_id'") or die
-        ('querry failed');
+        $wishlist_number=mysqli_query($conn,"SELECT * FROM wishlist WHERE name='$product_name' AND user_id='$user_id'")
+         or die ('querry failed');
+        $cart_number=mysqli_query($conn,"SELECT * FROM cart WHERE name='$product_name' AND user_id='$user_id'") 
+        or die('querry failed');
         if (mysqli_num_rows($wishlist_number)>0){
         $message[]='product already exist in wishlist!';
         }else if(mysqli_num_rows($cart_number)>0){
             $message[]='product already exist in cart!';
     }  else{
-        mysqli_query($conn,"INSERT INTO wishlist (user_id,pid,name,price,image)VALUES('$user_id','$product_id'
+        mysqli_query($conn,"INSERT INTO wishlist ('user_id','pid','name','price','image')VALUES('$user_id','$product_id'
         ,'$product_name','$product_price','$product_image')");
          $message[]='product successfuly added in wishlist!';
     }
