@@ -1,0 +1,46 @@
+.view_page{
+    padding: 5% 8%;
+}
+.view_page form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.view_page form img{
+    width: 50%;
+}
+.view_page form .name{
+    font-size: 3rem;
+    color: var(--pink);
+}
+.view_page form .detail,
+.view_page form .price{
+    font-size: 20px;
+    color: grey;
+    line-height: 2;
+}
+.view_page form .price{
+    font-size: 24px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    flex: 50%;
+    background-color: #e798d0;
+   
+  }
+.view_page form .quantity{
+    width: 20%;
+    box-shadow: none;
+    border: 0.5px solid var(--pink);
+    border-radius: 0;
+    margin-top: 1rem;
+    text-align: justify;
+}
+.view_page button{
+    background: var(--pink);
+    color: #fff;
+    margin-top: 1rem;
+    padding: .8rem 1rem;
+}

@@ -29,23 +29,15 @@ if(isset($_POST['add_to_cart'])){
      $message[]='product successfuly added in cart!';
 }
 }
- /*---delete product to wishlist-------*/
- if(isset($_GET['delete'])){
-    $delete_id=$_GET['delete'];
-   
-    mysqli_query($conn,"DELETE FROM wishlist WHERE id='$delete_id'") or die
-    ('querry failed');
-
-    header('location:wishlist.php');
-}
-/*---delete product to wishlist-------
+ 
+/*---delete product to wishlist-------*/
 if(isset($_GET['delete_all'])){
     
     mysqli_query($conn,"DELETE FROM wishlist WHERE user_id='$user_id'") or die
     ('querry failed');
 
     header('location:wishlist.php');
-}*/
+}
 if (isset($_GET['delete_all'])) {
     // Assuming you have already established a database connection and authenticated the user.
 
@@ -64,6 +56,7 @@ if (isset($_GET['delete_all'])) {
 
      ?>
     <style type="text/css">
+        <?php include "footer.css";?>
     </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,11 +66,9 @@ if (isset($_GET['delete_all'])) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-            <link rel="stylesheet" type="text/css"  href="footer.css">
             <link rel="stylesheet" type="text/css"  href="style.css">
             <link rel="stylesheet" type="text/css"  href="product_page.css">
             <link rel="stylesheet" type="text/css"  href="wishlist.css">
-
             <title> Flower Shop </title>
        </head> 
 <body>
@@ -136,15 +127,15 @@ if (isset($_GET['delete_all'])) {
            $grand_total+=$fetch_wishlist['price'];
             }
         }else{
-            echo '<img src="img/cart.jpg">';
+            echo '<img src="img/empty-cart.png">';
         }
         ?>
     </div>
     <div class= "wishlist_total">
         <P> Total Amount Payable:<span>$<?php echo $grand_total?>/-</span></a> </p>
         <a href="shop.php">Continue Shopping </a>
-        <a href="wishlist.php?delete_all" class="btn2<?php echo ($grand_total > 1)?'':'disabled'?>" onclick="return
-        confirm('do you want to delete all from wishlist')">Delete All</a>
+        <a href="wishlist.php?delete_all" class="btn2<?php echo ($grand_total > 1)?'':'disabled'?>" 
+        onclick="return confirm('do you want to delete all from wishlist')">Delete All</a>
     </div>
  </div>
          <?php include 'footer.php' ;?>

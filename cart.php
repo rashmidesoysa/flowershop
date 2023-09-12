@@ -12,7 +12,7 @@
     
 /*-----update product to cart-------*/
     if(isset($_POST['update_quantity_btn'])){
-     /*   $update_quantity_id=$_POST['update_quantity_id'];
+     $update_quantity_id=$_POST['update_quantity_id'];
         $update_value=$_POST['update_quantity'];
 
         $update_query=mysqli_query($conn,"UPDATE  cart SET quantity='$update_value' WHERE id='$update_quantity_id'") or die
@@ -20,14 +20,8 @@
         if($update_query){
             header('location:cart.php');
         }
-    }*/
-    $update_quantity_id = mysqli_real_escape_string($conn, $_POST['update_quantity_id']);
-    $update_value = mysqli_real_escape_string($conn, $_POST['update_quantity']);
+    }
     
-    $update_query = mysqli_prepare($conn, "UPDATE cart SET quantity=? WHERE id=?");
-    mysqli_stmt_bind_param($update_query, "ii", $update_value, $update_quantity_id);
-    mysqli_stmt_execute($update_query);
-} 
 
  /*---delete product to wishlist-------*/
  if(isset($_GET['delete'])){
@@ -49,7 +43,10 @@ if(isset($_GET['delete_all'])){
 
      ?>
     <style type="text/css">
-       
+       <?php include "footer.css";?>
+       <?php include "wishlist.css";?>
+       <?php include "style.css";?>
+       <?php include "product_page.css";?>
         </style>
     <!DOCTYPE html>
     <html lang="en">
@@ -59,9 +56,9 @@ if(isset($_GET['delete_all'])){
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-            <link rel="stylesheet" type="text/css"  href="footer.css">
-            <link rel="stylesheet" type="text/css"  href="style.css">
-            <link rel="stylesheet" type="text/css"  href="product_page.css">
+           
+            
+            
            
             <title> Flower Shop </title>
         </head> 
@@ -125,23 +122,23 @@ if(isset($_GET['delete_all'])){
            }
         }else{
             echo '<div class="empty">
-            <img src="img/ccc.png">
+            <img src="img/final.png">
             <p> no products in your cart yet</p>
             </div>
             ';
         }
         ?>
         </div>
-        <div class="dlt">
-            <a href="cart.php?delete_all" class="btn2 <?php echo ($grand_total > 1)?'':'disabled'?>" onclick="return
-        confirm('do you want to delete all from cart')">delete all</a>
-         </div>
+      
         <div class= "wishlist_total">
-        <P> total amount payable:<span>$<?php echo $grand_total?>/-</span></a>
+        <P> Total amount payable:<span>$<?php echo $grand_total?>/-</span></a></p>
         <a href="shop.php">continue shopping </a>
+        <a href="cart.php?delete_all" class="btn2 <?php echo ($grand_total > 1)?'':'disabled'?>" onclick="return
+        confirm('do you want to delete all from cart')">Delete all</a>
         <a href="checkout.php" class="btn2 <?php echo ($grand_total > 1)?'':'disabled'?>">proceed to check out</a>
     </div>
          <?php include 'footer.php' ;?>
          <script type="text/javascript" src="script.js"> </script>
         </body>
     </html>
+

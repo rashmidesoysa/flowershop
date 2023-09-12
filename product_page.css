@@ -44,7 +44,7 @@
 }
 
 .add-products form{
-    width: 50vw;
+    width: 25vw;
     margin: 2rem auto;
     background: #574848;
     padding: 1rem 2rem;
@@ -56,13 +56,15 @@
     color: var(--pink);
 }
 .add-products form textarea{
-    height: 200px;
+    height: 100px;
+    font-family: 'Quicksand', sans-serif;
 }
 .add-products h1{
     text-align: center;
     text-transform: uppercase;
     color: #545bba;
     margin: 1rem;
+    font-family: 'Quicksand', sans-serif;
 }
 .show-products .box_container{
     grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));

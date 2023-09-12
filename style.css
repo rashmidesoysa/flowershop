@@ -143,7 +143,7 @@ header{
     font-size: 1.5rem;
     font-weight: bold;
     color: #aa4ff3;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 .logo span{
     color: #e382c5;
@@ -154,6 +154,7 @@ header{
     font-size: 1rem;
     color: #aa4ff3;
     text-transform: uppercase;
+    font-family: 'DM Serif Display', serif;
 }
 .navbar a:hover,
 .header .icons i:hover{

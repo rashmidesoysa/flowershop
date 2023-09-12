@@ -3,9 +3,13 @@
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" type="text/css"  href="product_page.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Playfair+Display:ital,wght@1,600&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
             <link rel="stylesheet" type="text/css"  href="footer.css">
             <link rel="stylesheet" type="text/css"  href="style.css">
             
@@ -29,7 +33,7 @@
             die('query failed');
             $wishlist_num_rows=mysqli_num_rows($select_wishlist);
             ?>
-           <a href="wishlist.php"><i class="fa fa-heart"></i><span>(<?php echo $wishlist_num_rows;?>)</span></a>
+           <a href="wishlist.php"><i class="bi bi-suit-heart"></i><span>(<?php echo $wishlist_num_rows;?>)</span></a>
             
             <?php
             $select_cart=mysqli_query($conn,"SELECT *FROM cart WHERE user_id='$user_id' ")or

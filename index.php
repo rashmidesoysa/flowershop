@@ -31,7 +31,6 @@
     }
 }
 
-
 /*-----adding product to cart-------*/
 
 if(isset($_POST['add_to_cart'])){
@@ -64,8 +63,8 @@ if(isset($_POST['add_to_cart'])){
         <head>
             <meta charset="utf-8">
             <meta name ="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
             <link rel="stylesheet" type="text/css"  href="footer.css">
             <link rel="stylesheet" type="text/css"  href="style.css">
@@ -188,7 +187,7 @@ if(isset($_POST['add_to_cart'])){
         <input type="hidden" name="product_image"  value="<?php echo $fetch_products['image'];?>">
         <div class="icons">
             <a href="view_page.php?pid=<?php echo $fetch_products['id'];?>" class="fas fa-eye"></a>
-            <button type="submit" name="add_t_wishlist" class="fa fa-heart"></button>
+            <button type="submit" name="add_t_wishlist" class="bi bi-suit-heart"></button>
             <button type="submit" name="add_to_cart" class="fas fa-shopping-cart"></button>
             </div>
             </form>
