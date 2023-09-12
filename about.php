@@ -11,7 +11,7 @@
 
     ?>
     <style type="text/css">
-       
+       <?php  include "about.css";?>
         </style>
     <!DOCTYPE html>
     <html lang="en">
@@ -22,8 +22,8 @@
           
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
             <link rel="stylesheet" type="text/css"  href="style.css">
+            
             <link rel="stylesheet" type="text/css"  href="footer.css">
-            <link rel="stylesheet" type="text/css"  href="about.css">
             <title> Flower Shop </title>
         </head> 
         <body>
