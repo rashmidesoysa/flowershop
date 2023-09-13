@@ -7,8 +7,8 @@
         header('location:login.php');
     }
 
-    
-   
+
+
     
 /*-----update product to cart-------*/
     if(isset($_POST['update_quantity_btn'])){
@@ -44,9 +44,7 @@ if(isset($_GET['delete_all'])){
      ?>
     <style type="text/css">
        <?php include "footer.css";?>
-       <?php include "wishlist.css";?>
-       <?php include "style.css";?>
-       <?php include "product_page.css";?>
+       
         </style>
     <!DOCTYPE html>
     <html lang="en">
@@ -56,7 +54,9 @@ if(isset($_GET['delete_all'])){
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-           
+            <link rel="stylesheet" type="text/css"  href="style.css"> 
+             
+             <link rel="stylesheet" type="text/css"  href="product_page.css">
             
             
            
@@ -74,7 +74,7 @@ if(isset($_GET['delete_all'])){
                 portrayal of your love, possession, happiness, pride</p>
          </div>
         <div class="shop">
-            <h1 class="title">Product Added In Cart </h1>
+            <h1 class="title">my bag </h1>
             <?php
                 if (isset($message)){
                 foreach($message as $message){
@@ -96,11 +96,11 @@ if(isset($_GET['delete_all'])){
             while ($fetch_cart=mysqli_fetch_assoc($select_cart)){
                
          ?>
+         
          <div class="box">
             <div class="icons">
-                <a href="cart.php?delete=<?php echo $fetch_cart['id'];?>" class="fas fa-eye" ></a>
-                <a href="view_page.php?pid=<?php echo $fetch_products['id'];?>" class="fas fa-eye"></a>
-            
+                
+                
 
         <img src="image/<?php echo $fetch_cart['image'];?>">
         <div class="price"><?php echo $fetch_cart['price'];?>/- </div>
@@ -109,7 +109,7 @@ if(isset($_GET['delete_all'])){
         <input type="hidden" name="update_quantity_id"  value="<?php echo $fetch_cart['id'];?>">
         <div class="qty">
             <input type="number" min="1" name="update_quantity" value="<?php echo $fetch_cart['quantity']?>">
-            <input type="submit" name="update_container_btn" value="update">
+            <input type="submit" name="update_container_btn" value="Delete">
         </div>    
         </form>
         <div class="total_amt">
@@ -129,16 +129,17 @@ if(isset($_GET['delete_all'])){
         }
         ?>
         </div>
-      
         <div class= "wishlist_total">
-        <P> Total amount payable:<span>$<?php echo $grand_total?>/-</span></a></p>
-        <a href="shop.php">continue shopping </a>
-        <a href="cart.php?delete_all" class="btn2 <?php echo ($grand_total > 1)?'':'disabled'?>" onclick="return
-        confirm('do you want to delete all from cart')">Delete all</a>
+        <P> Total Amount Payable:<span>$<?php echo $grand_total?>/-</span></a> </p>
+        <a href="shop.php">Continue Shopping </a>
+        <a href="cart.php?delete_all" class="btn2<?php echo ($grand_total > 1)?'':'disabled'?>" 
+        onclick="return confirm('do you want to delete all from cart')">Delete All</a>
         <a href="checkout.php" class="btn2 <?php echo ($grand_total > 1)?'':'disabled'?>">proceed to check out</a>
     </div>
+ </div>
          <?php include 'footer.php' ;?>
          <script type="text/javascript" src="script.js"> </script>
-        </body>
-    </html>
-
+</body>
+</html>
+      
+       

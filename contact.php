@@ -46,7 +46,7 @@
          <?php include 'header.php' ;?>
          <div class="banner">
             <h1> my contact</h1>
-            <p> lorem dolor sit asmet consector adipising wer</p>
+            <p> What can we help you with?</p>
          </div>
         <div class="help">
             <h1 class="title" > need help </h1>

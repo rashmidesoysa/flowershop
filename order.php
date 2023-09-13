@@ -19,8 +19,9 @@
       <meta name ="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-      <link rel="stylesheet" type="text/css"  href="footer.css">
+      <link rel="stylesheet" type="text/css"  href="about.css">
       <link rel="stylesheet" type="text/css"  href="style.css">
+      <link rel="stylesheet" type="text/css"  href="admin.css">
       <link rel="stylesheet" type="text/css"  href="product_page.css">
       <title> Flower Shop </title>
     </head> 
@@ -43,32 +44,34 @@
         if(mysqli_num_rows($select_orders )>0){
         while($fetch_orders=mysqli_fetch_assoc($select_orders)){
     ?>
-        <div class="box">
-            
-            <p>Name: <span> <?php echo $fetch_orders ['name'];?> </span></div>
-            <p>Number: <span> <?php echo $fetch_orders ['number'];?> </span></div>
-            <p>Email: <span> <?php echo $fetch_orders ['email'];?> </span></div>
-            <p>Payment Method: <span> <?php echo $fetch_orders ['method'];?> </span></div>
-            <p>Address: <span> <?php echo $fetch_orders ['address'];?> </span></div>
-            <p>Your Order: <span> <?php echo $fetch_orders ['total_products'];?> </span></div>
-            <p>Total Price: <span> <?php echo $fetch_orders ['total_price'];?> </span></div>
-            <p>Placed On: <span> <?php echo $fetch_orders ['placed_on'];?> </span></div>
-            <p>Payment Status: <span> <?php echo $fetch_orders ['payment_status'];?> </span></div>
-        </div>
-   <?php
-   }
-   }else{
-         echo '
+        <div class="box" >
+                    <p>  Name:<span><?php echo $fetch_orders['name'];?> </span> </p> 
+                         
+                    <p> Placed_on:<span><?php echo $fetch_orders['placed_on'];?> </span> </p>    
+                    <p> Number:<span><?php echo $fetch_orders['number'];?> </span> </p>   
+                    <p> Email:<span><?php echo $fetch_orders['email'];?> </span> </p>   
+                    <p> Total price:<span><?php echo $fetch_orders['total_price'];?> </span> </p>
+                    <p> Method:<span><?php echo $fetch_orders['method'];?> </span> </p>      
+                    <p>Address:<span><?php echo $fetch_orders['address'];?> </span> </p>   
+                    <p>your order:<span><?php echo $fetch_orders['total_products'];?> </span> </p>  
+                    <p>Payment Status: <span> <?php echo $fetch_orders ['payment_status'];?> </span></div>
+                   
+                </div> 
+                <?php
+                    }
+                 }else{
+                 echo '
             <div class="empty">
-            <img src="img\">
+            <img src="img\ccc.png">
             <p > no order place yet! </p>
             </div>
             ';
-        }
+                 }
      ?>
-</div>
-</div>
-<?php include 'footer.php' ;?>
-<script type="text/javascript" src="script.js"> </script>
-</body>
-</html>
+                  
+            </div>
+        </section>          
+        <script type="text/javascript"  src="script.js" > </script>
+        
+        </body>
+    </html>

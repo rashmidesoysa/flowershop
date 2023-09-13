@@ -22,9 +22,11 @@
           
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
             <link rel="stylesheet" type="text/css"  href="style.css">
-            
             <link rel="stylesheet" type="text/css"  href="footer.css">
-            <title> Flower Shop </title>
+            
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+         <title> Flower Shop </title>
         </head> 
         <body>
          <?php include 'header.php' ;?>
@@ -132,8 +134,8 @@
                 <h3> Nilni Fenando</h3>
                 <p>Easy to order beautiful flowers! Very reliable</p>
             </div>
-<div class="left-arrow" onclick="nextSlide();"> <i class="fa fa-arrow-left"></i></div>
-<div class="right-arrow"  onclick="prevSlide();"> <i class="fa fa-arrow-right"></i></div>
+<div class="left-arrow" onclick="nextSlide();"> <i class="glyphicon glyphicon-backward"></i></div>
+<div class="right-arrow"  onclick="prevSlide();"> <i class="glyphicon glyphicon-forward"></i></div>
 </div>
 </div>
 
